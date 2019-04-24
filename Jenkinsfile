@@ -2,10 +2,10 @@ import groovy.json.JsonSlurper
 pipeline {
 	 agent any
          options {
-			timeout(time: 1, unit: 'HOURS')
+		timeout(time: 1, unit: 'HOURS')
 		 }
 	 stages {
-		stage('NW 752')
+		stage('NW 752') {
 		steps {
 			sh 'whoami'
 			echo 'This is a GET API test'
@@ -32,5 +32,6 @@ pipeline {
                           println(Cookie) 
                                }
 		      }
+                    }
                  }
           }	
