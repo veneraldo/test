@@ -10,11 +10,11 @@ pipeline {
 			sh 'whoami'
 			echo 'This is a GET API test'
                         script {
-                                  def myurl = 'http://35.174.22.86:8000/sap/bc/adt/abapunit?sap-client=001&sap-language=EN'
-			// Use httpRequest Jenkins Plugin	
+                                  def myurl = 'http://35.174.22.86:3000/sap/bc/adt/abapunit?sap-client=001&sap-language=EN'
+			// Use httpRequest Jenkins Plugin /sap/bc/adt/abapunit/testruns	
                           def response = httpRequest consoleLogResponseBody: true,
                           authentication: 'NPL',  
-                          url: 'http://35.174.22.86:8000/sap/bc/adt/abapunit?sap-client=001&sap-language=EN',
+                          url: 'http://35.174.22.86:3000/sap/bc/adt/abapunit?sap-client=001&sap-language=EN',
                           customHeaders:[[name:'x-csrf-token', value:"fetch"]]
                         // Print response  
 			  println('Status: '+response.status)
